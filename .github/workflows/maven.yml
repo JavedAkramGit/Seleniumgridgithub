@@ -27,8 +27,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
     - name: Start Docker Selenium Grid Setup
-    - run: docker-compose -f "docker-compose.yml" up --scale edge=8 
+    - run: docker-compose -f docker-compose.yml up --scale edge=8 
+    
     - name: Build with Maven
       run: mvn clean test
 
